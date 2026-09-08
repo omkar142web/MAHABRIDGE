@@ -114,6 +114,7 @@
       crumbs.appendChild(document.createTextNode(" / "));
       const backNote = document.createElement("p");
       const backLink = document.createElement("a");
+      backLink.className = "btn btn-ghost btn-sm";
       backLink.href = GuideUI.guideHref(from.id, null);
       backLink.textContent = "\u2190 Back to " + from.title;
       backNote.appendChild(backLink);
@@ -129,10 +130,6 @@
     head.className = "guide-head";
     const badgeRow = document.createElement("p");
     badgeRow.appendChild(GuideUI.typeBadge(g.kind));
-    const demo = document.createElement("span");
-    demo.className = "badge badge-demo";
-    demo.textContent = "Demo content";
-    badgeRow.appendChild(demo);
     const h1 = document.createElement("h1");
     h1.textContent = g.title;
     const auth = document.createElement("p");
