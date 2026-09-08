@@ -75,7 +75,7 @@ a {
   color: var(--blue);
   text-underline-offset: 2px;
 }
-a:hover:not(.brand) {
+a:hover:not(.brand):not(.btn) {
   color: var(--blue-dark);
 }
 
@@ -812,6 +812,25 @@ a.dep-card:hover .dep-go {
   font-size: 13.5px;
   border-radius: 10px;
   box-shadow: var(--shadow-sm);
+}
+.btn .ic svg {
+  width: 16px;
+  height: 16px;
+}
+.btn-official {
+  margin-bottom: 16px;
+}
+.btn-official .ic {
+  transition: transform var(--transition);
+}
+.btn-official:hover .ic {
+  transform: translate(1px, -1px);
+}
+.btn-back .ic {
+  transition: transform var(--transition);
+}
+.btn-back:hover .ic {
+  transform: translateX(-2px);
 }
 
 /* ---------- Notices ---------- */

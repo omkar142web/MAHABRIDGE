@@ -126,9 +126,10 @@
       article.appendChild(crumbs);
       const backNote = document.createElement("p");
       const backLink = document.createElement("a");
-      backLink.className = "btn btn-ghost btn-sm";
+      backLink.className = "btn btn-ghost btn-sm btn-back";
       backLink.href = GuideUI.guideHref(from.id, null);
-      backLink.textContent = "\u2190 Back to " + from.title;
+      backLink.appendChild(Icon.el("arrowLeft"));
+      backLink.appendChild(document.createTextNode("Back to " + from.title));
       backNote.appendChild(backLink);
       article.appendChild(backNote);
     } else {
@@ -250,7 +251,7 @@
       for (const link of g.obtain.officialLinks || []) {
         const p = document.createElement("p");
         const a = document.createElement("a");
-        a.className = "btn";
+        a.className = "btn btn-official";
         a.href = link.url;
         a.target = "_blank";
         a.rel = "noopener";
