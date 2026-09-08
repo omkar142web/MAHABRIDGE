@@ -168,6 +168,13 @@ nav.site-nav a:hover:not([aria-current="page"]) {
 .header-search {
   display: flex;
 }
+/* When the header carries a search field, it leads and the nav follows. */
+.header-inner:has(.header-search) .header-search {
+  margin-left: auto;
+}
+.header-inner:has(.header-search) .site-nav {
+  margin-left: 8px;
+}
 .header-search input {
   border-radius: var(--radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.22);
