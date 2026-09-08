@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAHA-BRIDGE — What do you need help with?</title>
+  <meta name="description" content="A simple guide to government services and documents: what you need, what comes first, and what to do next.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">MAHA-BRIDGE <small>service guide (demo)</small></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="browse.html?type=services">Services</a>
+        <a href="browse.html?type=documents">Documents</a>
+        <a href="browse.html?type=guides">Guides</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <div class="reading">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">What do you need help with?</h1>
+        <p>Tell us what you want — we'll tell you what you need, what comes first, and what to do next.</p>
+        <div class="search-row">
+          <label class="skip-link" for="search-input">Tell us what you need</label>
+          <input id="search-input" type="search" name="q" placeholder="Tell us what you need…" autocomplete="off"
+                 role="combobox" aria-expanded="false" aria-controls="suggestions" aria-label="Tell us what you need">
+          <ul id="suggestions" class="suggestions" hidden></ul>
+        </div>
+        <p class="examples">Try:
+          <button type="button" data-example="PAN Card">Get a PAN Card</button> ·
+          <button type="button" data-example="I want an ATM card">I want an ATM card</button> ·
+          <button type="button" data-example="income certificate">Income certificate</button> ·
+          <button type="button" data-example="scholarship help for college">Scholarship help</button>
+        </p>
+      </section>
+    </div>
+
+    <section id="results" class="section reading" aria-live="polite"></section>
+    <p id="result-count" class="result-count reading" role="status"></p>
+
+    <section class="section" aria-labelledby="popular-title">
+      <h2 id="popular-title">Popular guides</h2>
+      <div id="popular-grid" class="card-grid"></div>
+    </section>
+
+    <section class="section reading" aria-labelledby="how-title">
+      <h2 id="how-title">How it works</h2>
+      <ol class="steps">
+        <li>Search for what you want — a document name or a goal like “I want an ATM card”.</li>
+        <li>Understand what it needs, what comes first, and why.</li>
+        <li>Follow the steps on the official portal. This guide explains; the authority decides.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    MAHA-BRIDGE demo — a guidance prototype, not a government portal. Requirements can vary; always check the official source.
+  </footer>
+
+  <script src="js/data-access.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

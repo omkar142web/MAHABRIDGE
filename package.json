@@ -1,0 +1,14 @@
+{
+  "name": "maha-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Simple, intelligent guide to government services and documents (SIH26129 prototype).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

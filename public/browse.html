@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse — MAHA-BRIDGE</title>
+  <meta name="description" content="Browse all service and document guides.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">MAHA-BRIDGE <small>service guide (demo)</small></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="browse.html?type=services">Services</a>
+        <a href="browse.html?type=documents">Documents</a>
+        <a href="browse.html?type=guides">Guides</a>
+      </nav>
+      <form class="header-search" action="index.html" method="get" role="search">
+        <label class="skip-link" for="header-q">Search guides</label>
+        <input id="header-q" type="search" name="q" placeholder="Search guides…">
+      </form>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <div id="browse"></div>
+  </main>
+
+  <footer class="site-footer">
+    MAHA-BRIDGE demo — a guidance prototype, not a government portal. Requirements can vary; always check the official source.
+  </footer>
+
+  <script src="js/data-access.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/browse.js"></script>
+</body>
+</html>

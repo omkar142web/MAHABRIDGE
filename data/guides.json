@@ -1,0 +1,434 @@
+[
+  {
+    "id": "atm-card",
+    "kind": "service",
+    "title": "ATM Card",
+    "aliases": ["atm", "atm card", "debit card", "debit atm"],
+    "keywords": ["bank", "cash", "withdrawal", "debit", "account money"],
+    "goalPhrases": ["i want an atm card", "i need an atm card", "how to get an atm card"],
+    "summary": "A bank-issued card for withdrawing cash and paying at shops. You typically need a PAN Card first.",
+    "department": "Banking",
+    "category": "Banking",
+    "uses": ["Withdraw cash from ATMs", "Pay at shops and online", "Check your account balance"],
+    "authority": { "name": "Your bank (branch or official banking channel)", "website": null },
+    "conditions": [],
+    "requirements": [
+      { "kind": "prerequisite", "label": "PAN Card", "detail": "Needed as ID proof by the bank.", "state": "required", "guideId": "pan-card" },
+      { "kind": "prerequisite", "label": "Active bank account", "detail": "A savings or current account with the bank issuing the card.", "state": "required" },
+      { "kind": "information", "label": "Registered mobile number", "detail": "Needed for OTP verification and alerts.", "state": "required" }
+    ],
+    "steps": [
+      { "title": "Keep your PAN Card and account details ready." },
+      { "title": "Visit your bank branch or its official channel and request an ATM / debit card." },
+      { "title": "Verify your identity as asked (OTP or documents)." },
+      { "title": "Collect the card and set your PIN as instructed by the bank." }
+    ],
+    "obtain": {
+      "where": "Your bank branch, or the bank's official app, website, or customer care.",
+      "how": "Cards are issued by banks, not by this guide. Ask your bank which channel it supports.",
+      "officialLinks": []
+    },
+    "relatedIds": ["pan-card", "aadhaar"],
+    "demo": true
+  },
+  {
+    "id": "pan-card",
+    "kind": "document",
+    "title": "PAN Card",
+    "aliases": ["pan", "pan card", "permanent account number", "e-pan"],
+    "keywords": ["income tax", "identity", "bank kyc", "tax id"],
+    "goalPhrases": ["i want a pan card", "i need a pan card", "how to get a pan card"],
+    "summary": "A 10-character tax identity number issued by the Income Tax Department. Commonly needed for banking and financial services.",
+    "department": "Income Tax Department",
+    "category": "Identity & Tax",
+    "uses": ["Open bank accounts and get an ATM card", "File income tax returns", "High-value financial transactions"],
+    "authority": { "name": "Income Tax Department", "website": "https://www.incometaxindia.gov.in" },
+    "conditions": [{ "text": "You typically need to be an Indian citizen, resident, or an eligible applicant category — check the official instructions for your case." }],
+    "requirements": [
+      { "kind": "prerequisite", "label": "Aadhaar", "detail": "Commonly used as proof of identity, address, and date of birth.", "state": "required", "guideId": "aadhaar" },
+      { "kind": "document", "label": "Recent photograph", "detail": "Passport-size, as per the official specifications.", "state": "required" },
+      { "kind": "information", "label": "Date of birth", "detail": "Must match your supporting documents.", "state": "required" },
+      { "kind": "information", "label": "Mobile number and email", "detail": "Needed for OTP verification and communication.", "state": "required" }
+    ],
+    "steps": [
+      { "title": "Keep your Aadhaar, photograph, and personal details ready." },
+      { "title": "Open the official PAN application service (link below)." },
+      { "title": "Fill the form exactly as per your documents." },
+      { "title": "Upload documents, verify with OTP, and pay the fee shown on the official site." },
+      { "title": "Save your acknowledgment number to check progress on the official site." }
+    ],
+    "obtain": {
+      "where": "Through the official PAN service of the Income Tax Department.",
+      "how": "Apply online on the official portal, or visit an authorized PAN service centre near you.",
+      "officialLinks": [{ "label": "Income Tax Department — PAN information", "url": "https://www.incometaxindia.gov.in" }]
+    },
+    "relatedIds": ["aadhaar", "atm-card", "passport"],
+    "demo": true
+  },
+  {
+    "id": "aadhaar",
+    "kind": "document",
+    "title": "Aadhaar",
+    "aliases": ["aadhar", "aadhaar card", "uid", "uidai", "e-aadhaar"],
+    "keywords": ["identity", "address proof", "biometric", "12 digit"],
+    "goalPhrases": ["i want an aadhaar card", "i need aadhaar", "how to get aadhaar"],
+    "summary": "A 12-digit identity number issued by UIDAI after biometric enrolment. Widely used as ID and address proof.",
+    "department": "UIDAI",
+    "category": "Identity",
+    "uses": ["Proof of identity and address", "e-KYC for bank accounts, SIM cards, and PAN", "Availing government subsidies and benefits"],
+    "authority": { "name": "Unique Identification Authority of India (UIDAI)", "website": "https://uidai.gov.in" },
+    "conditions": [{ "text": "Any resident of India can typically enrol — check the official enrolment rules for your situation." }],
+    "requirements": [
+      {
+        "kind": "document",
+        "label": "Proof of identity and address",
+        "detail": "Any one of these is typically accepted:",
+        "state": "required",
+        "alternatives": [
+          { "kind": "document", "label": "Passport", "state": "required", "guideId": "passport" },
+          { "kind": "document", "label": "Voter ID", "state": "required", "guideId": "voter-id" },
+          { "kind": "document", "label": "Birth Certificate", "detail": "For date-of-birth proof in some cases.", "state": "required", "guideId": "birth-certificate" }
+        ]
+      },
+      { "kind": "information", "label": "Biometric details", "detail": "Fingerprints, iris scan, and photograph are taken at the enrolment centre — no prior preparation needed.", "state": "required" },
+      { "kind": "information", "label": "Mobile number", "detail": "Needed for OTP verification during and after enrolment.", "state": "required" }
+    ],
+    "steps": [
+      { "title": "Find your nearest Aadhaar enrolment centre on the official UIDAI site." },
+      { "title": "Carry an identity / address document with you." },
+      { "title": "Fill the enrolment form and give your biometric details at the centre." },
+      { "title": "Keep the enrolment slip safe to check status and download e-Aadhaar later." }
+    ],
+    "obtain": {
+      "where": "UIDAI-authorised Aadhaar enrolment centres.",
+      "how": "Enrolment happens in person because biometrics are captured at the centre.",
+      "officialLinks": [{ "label": "UIDAI — official Aadhaar information", "url": "https://uidai.gov.in" }]
+    },
+    "relatedIds": ["pan-card", "passport", "voter-id"],
+    "demo": true
+  },
+  {
+    "id": "passport",
+    "kind": "document",
+    "title": "Passport",
+    "aliases": ["passport", "indian passport", "passport seva"],
+    "keywords": ["travel", "abroad", "international id", "visa"],
+    "goalPhrases": ["i want a passport", "i need a passport", "how to apply for a passport"],
+    "summary": "Official travel document issued by the Ministry of External Affairs. Needed for international travel.",
+    "department": "Ministry of External Affairs",
+    "category": "Travel & Identity",
+    "uses": ["International travel", "Strong proof of identity, address, and citizenship", "Visa applications"],
+    "authority": { "name": "Ministry of External Affairs (Passport Seva)", "website": "https://www.passportindia.gov.in" },
+    "conditions": [{ "text": "You must be an Indian citizen. Document lists differ slightly for minors, students, and government employees." }],
+    "requirements": [
+      { "kind": "document", "label": "Aadhaar", "detail": "Commonly used for identity, address, and date-of-birth proof.", "state": "required", "guideId": "aadhaar" },
+      {
+        "kind": "document",
+        "label": "Address proof",
+        "detail": "Any one of these is typically accepted:",
+        "state": "required",
+        "alternatives": [
+          { "kind": "document", "label": "Voter ID", "state": "required", "guideId": "voter-id" },
+          { "kind": "document", "label": "Recent utility bill or rent agreement", "detail": "Electricity bill, water bill, or registered rent agreement.", "state": "required" }
+        ]
+      },
+      { "kind": "document", "label": "Birth Certificate", "detail": "Typically needed as date-of-birth proof.", "state": "required", "guideId": "birth-certificate" }
+    ],
+    "steps": [
+      { "title": "Register on the official Passport Seva portal and fill the application." },
+      { "title": "Pay the fee shown on the portal and book an appointment." },
+      { "title": "Visit the Passport Seva Kendra with your original documents." },
+      { "title": "Complete police verification when scheduled, then track dispatch on the portal." }
+    ],
+    "obtain": {
+      "where": "Passport Seva portal + Passport Seva Kendra appointment.",
+      "how": "Apply online on the official portal first; the in-person visit follows your appointment.",
+      "officialLinks": [{ "label": "Passport Seva — official portal", "url": "https://www.passportindia.gov.in" }]
+    },
+    "relatedIds": ["aadhaar", "birth-certificate", "voter-id"],
+    "demo": true
+  },
+  {
+    "id": "voter-id",
+    "kind": "document",
+    "title": "Voter ID (EPIC)",
+    "aliases": ["voter id", "voter card", "epic", "election card", "voter registration"],
+    "keywords": ["vote", "election", "eci", "electoral roll"],
+    "goalPhrases": ["i want a voter id", "how to register to vote", "i need a voter card"],
+    "summary": "Photo identity card for registered voters, issued via the Election Commission of India. Needed to vote.",
+    "department": "Election Commission of India",
+    "category": "Identity & Civic",
+    "uses": ["Vote in elections", "Photo identity proof", "Address proof in many services"],
+    "authority": { "name": "Election Commission of India", "website": "https://www.eci.gov.in" },
+    "conditions": [
+      { "text": "You must be 18 years or older on the qualifying date." },
+      { "text": "You must be ordinarily resident in the constituency where you register." }
+    ],
+    "requirements": [
+      { "kind": "document", "label": "Age and address proof", "detail": "Aadhaar is commonly used; other proofs are listed on the official form.", "state": "required", "guideId": "aadhaar" },
+      { "kind": "document", "label": "Recent photograph", "detail": "Passport-size, as per the official specifications.", "state": "required" }
+    ],
+    "steps": [
+      { "title": "Open the official voter registration service (link below)." },
+      { "title": "Fill the new-registration form with your address and date of birth." },
+      { "title": "Upload age and address proof and submit." },
+      { "title": "Note your reference number and check the electoral roll after verification." }
+    ],
+    "obtain": {
+      "where": "Election Commission's official voter services.",
+      "how": "Register online on the official portal, or apply at your local electoral office / voter camp.",
+      "officialLinks": [{ "label": "Election Commission of India — official site", "url": "https://www.eci.gov.in" }]
+    },
+    "relatedIds": ["aadhaar", "passport", "domicile-certificate"],
+    "demo": true
+  },
+  {
+    "id": "driving-licence",
+    "kind": "document",
+    "title": "Driving Licence",
+    "aliases": ["driving licence", "driving license", "dl", "license", "parivahan"],
+    "keywords": ["drive", "vehicle", "car", "bike", "learner licence", "rto"],
+    "goalPhrases": ["i want a driving licence", "how to get a driving licence", "i need a dl"],
+    "summary": "Official permission to drive motor vehicles, issued by the State Transport Department after tests.",
+    "department": "State Transport Department",
+    "category": "Transport",
+    "uses": ["Legally drive a car, bike, or other motor vehicle", "Photo identity proof", "Required for commercial driving jobs"],
+    "authority": { "name": "State Transport Department (via Parivahan)", "website": "https://parivahan.gov.in" },
+    "conditions": [
+      { "text": "You must be 18 or older for a permanent licence for most vehicle classes (16+ for gearless two-wheelers in some cases)." },
+      { "text": "You typically need a learner's licence first and must pass the driving test." }
+    ],
+    "requirements": [
+      { "kind": "document", "label": "Aadhaar", "detail": "Commonly used for identity, address, and age proof.", "state": "required", "guideId": "aadhaar" },
+      { "kind": "document", "label": "Learner's licence", "detail": "Issued before the permanent licence; usually requires holding it for a minimum period.", "state": "required" },
+      { "kind": "document", "label": "Medical certificate", "detail": "May be required if you are above 40 or applying for a transport-vehicle licence.", "state": "conditional", "condition": "You are above 40, or you are applying for a transport (commercial) vehicle licence." }
+    ],
+    "steps": [
+      { "title": "Apply for a learner's licence on the official Parivahan portal and pass the learner test." },
+      { "title": "Practise driving, then book your permanent-licence driving test slot." },
+      { "title": "Appear for the test with your documents and vehicle." },
+      { "title": "After passing, download your licence or receive it as instructed by your RTO." }
+    ],
+    "obtain": {
+      "where": "State Transport Department / RTO via the Parivahan portal.",
+      "how": "Apply online first, then visit the RTO for the driving test.",
+      "officialLinks": [{ "label": "Parivahan — official transport services", "url": "https://parivahan.gov.in" }]
+    },
+    "relatedIds": ["aadhaar", "passport", "voter-id"],
+    "demo": true
+  },
+  {
+    "id": "birth-certificate",
+    "kind": "document",
+    "title": "Birth Certificate",
+    "aliases": ["birth certificate", "janam praman patra", "birth registration"],
+    "keywords": ["birth", "newborn", "child", "dob proof", "municipal"],
+    "goalPhrases": ["i need a birth certificate", "how to get a birth certificate", "birth certificate for my child"],
+    "summary": "Official record of a birth, issued by the local Registrar of Births (municipal body). Needed as age proof for many services.",
+    "department": "Municipal Corporation / Registrar of Births",
+    "category": "Civil Records",
+    "uses": ["Date-of-birth proof for school, passport, and Aadhaar", "Eligibility for child-related schemes", "Legal identity record"],
+    "authority": { "name": "Local municipal body / Registrar of Births and Deaths", "website": null },
+    "conditions": [{ "text": "Registration is simplest within 21 days of birth; rules differ for delayed registration — check with your local body." }],
+    "requirements": [
+      { "kind": "document", "label": "Hospital discharge proof", "detail": "Discharge summary or birth report from the hospital.", "state": "required" },
+      { "kind": "information", "label": "Parents' identity details", "detail": "Names and ID details as asked on the registration form.", "state": "required" },
+      { "kind": "document", "label": "Affidavit for delayed registration", "detail": "May be required if registering long after the birth.", "state": "conditional", "condition": "You are registering well after the birth (for example, after 21 days — exact rules vary by state)." }
+    ],
+    "steps": [
+      { "title": "Collect the hospital birth report and parents' ID details." },
+      { "title": "Apply at your municipal office or its official birth-registration portal." },
+      { "title": "Verify the details on the draft certificate carefully." },
+      { "title": "Collect the issued certificate and keep copies safe." }
+    ],
+    "obtain": {
+      "where": "Your municipal corporation / nagar palika, or its official portal.",
+      "how": "Registration rules vary by state, so confirm the local process before visiting.",
+      "officialLinks": []
+    },
+    "relatedIds": ["aadhaar", "passport", "domicile-certificate"],
+    "demo": true
+  },
+  {
+    "id": "income-certificate",
+    "kind": "document",
+    "title": "Income Certificate",
+    "aliases": ["income certificate", "aay praman patra", "income proof"],
+    "keywords": ["income", "salary proof", "scholarship", "revenue", "tehsil"],
+    "goalPhrases": ["i need an income certificate", "how to get an income certificate", "income proof for scholarship"],
+    "summary": "It certifies a family's annual income. Commonly needed for scholarships, fee waivers, and welfare schemes.",
+    "department": "State Revenue Department",
+    "category": "Certificates",
+    "uses": ["Apply for scholarships and fee waivers", "Claim welfare-scheme benefits", "Income proof where officially asked"],
+    "authority": { "name": "State Revenue Department (Tehsil / Taluka office)", "website": null },
+    "conditions": [{ "text": "You must be a resident of the state issuing the certificate — exact rules vary by state." }],
+    "requirements": [
+      { "kind": "document", "label": "Aadhaar", "detail": "Commonly used for identity and address.", "state": "required", "guideId": "aadhaar" },
+      {
+        "kind": "document",
+        "label": "Residence proof",
+        "detail": "Any one of these is typically accepted:",
+        "state": "required",
+        "alternatives": [
+          { "kind": "document", "label": "Domicile Certificate", "state": "required", "guideId": "domicile-certificate" },
+          { "kind": "document", "label": "Ration Card", "state": "required", "guideId": "ration-card" },
+          { "kind": "document", "label": "Recent utility bill", "detail": "Electricity or water bill in the applicant's or family member's name.", "state": "required" }
+        ]
+      },
+      { "kind": "information", "label": "Income details", "detail": "Salary slips, employer letter, or self-declaration as asked by your state.", "state": "required" }
+    ],
+    "steps": [
+      { "title": "Keep Aadhaar, residence proof, and income details ready." },
+      { "title": "Apply on your state's revenue / e-district portal or at the tehsil office." },
+      { "title": "Complete any local verification visit if asked." },
+      { "title": "Download or collect the certificate and check the validity period." }
+    ],
+    "obtain": {
+      "where": "State Revenue Department — tehsil / taluka office or state e-district portal.",
+      "how": "Process varies by state, so confirm the current form and fee on your state's official portal.",
+      "officialLinks": []
+    },
+    "relatedIds": ["domicile-certificate", "ration-card", "caste-certificate"],
+    "demo": true
+  },
+  {
+    "id": "caste-certificate",
+    "kind": "document",
+    "title": "Caste Certificate",
+    "aliases": ["caste certificate", "jati praman patra", "community certificate", "sc st obc certificate"],
+    "keywords": ["caste", "category", "reservation", "sc", "st", "obc"],
+    "goalPhrases": ["i need a caste certificate", "how to get a caste certificate"],
+    "summary": "Certifies a person's caste / community. Needed for reservation benefits in education, jobs, and schemes.",
+    "department": "State Revenue Department",
+    "category": "Certificates",
+    "uses": ["Claim reservation in admissions and government jobs", "Apply for category-specific scholarships", "Caste-based scheme benefits"],
+    "authority": { "name": "State Revenue Department (Tehsil / Taluka office)", "website": null },
+    "conditions": [{ "text": "Issued only for castes / communities recognised in your state's official lists." }],
+    "requirements": [
+      { "kind": "document", "label": "Aadhaar", "detail": "Commonly used for identity and address.", "state": "required", "guideId": "aadhaar" },
+      { "kind": "document", "label": "Domicile Certificate", "detail": "Often needed to show state residency.", "state": "required", "guideId": "domicile-certificate" },
+      { "kind": "document", "label": "Parent's caste certificate", "detail": "May be required depending on your state.", "state": "conditional", "condition": "Your state asks for proof of the family's recognised caste status." }
+    ],
+    "steps": [
+      { "title": "Keep Aadhaar, domicile proof, and family caste records ready." },
+      { "title": "Apply on your state's revenue / e-district portal or at the tehsil office." },
+      { "title": "Complete local verification if asked." },
+      { "title": "Collect the certificate and check the details carefully." }
+    ],
+    "obtain": {
+      "where": "State Revenue Department — tehsil / taluka office or state e-district portal.",
+      "how": "Process varies by state, so confirm the current form on your state's official portal.",
+      "officialLinks": []
+    },
+    "relatedIds": ["domicile-certificate", "income-certificate", "birth-certificate"],
+    "demo": true
+  },
+  {
+    "id": "domicile-certificate",
+    "kind": "document",
+    "title": "Domicile Certificate",
+    "aliases": ["domicile", "domicile certificate", "residence certificate", "mool niwas"],
+    "keywords": ["residence", "address", "native", "state resident"],
+    "goalPhrases": ["i need a domicile certificate", "how to get a domicile certificate", "residence proof"],
+    "summary": "Certifies that a person is a resident of a state. Often needed for admissions, jobs, and other certificates.",
+    "department": "State Revenue Department",
+    "category": "Certificates",
+    "uses": ["State-quota admissions and government jobs", "Support applications for income / caste certificates", "Residence proof for schemes"],
+    "authority": { "name": "State Revenue Department (Tehsil / Taluka office)", "website": null },
+    "conditions": [{ "text": "You must have lived in the state for the minimum period your state requires." }],
+    "requirements": [
+      { "kind": "document", "label": "Aadhaar", "detail": "Commonly used for identity.", "state": "required", "guideId": "aadhaar" },
+      {
+        "kind": "document",
+        "label": "Proof of stay",
+        "detail": "Any one of these is typically accepted:",
+        "state": "required",
+        "alternatives": [
+          { "kind": "document", "label": "Ration Card", "state": "required", "guideId": "ration-card" },
+          { "kind": "document", "label": "Voter ID", "state": "required", "guideId": "voter-id" },
+          { "kind": "document", "label": "Utility bills or school records", "detail": "Showing long-term residence at the address.", "state": "required" }
+        ]
+      }
+    ],
+    "steps": [
+      { "title": "Keep Aadhaar and proof-of-stay documents ready." },
+      { "title": "Apply on your state's revenue / e-district portal or at the tehsil office." },
+      { "title": "Complete local verification if asked." },
+      { "title": "Collect the certificate and check the details carefully." }
+    ],
+    "obtain": {
+      "where": "State Revenue Department — tehsil / taluka office or state e-district portal.",
+      "how": "Process varies by state, so confirm the current form on your state's official portal.",
+      "officialLinks": []
+    },
+    "relatedIds": ["ration-card", "voter-id", "income-certificate"],
+    "demo": true
+  },
+  {
+    "id": "ration-card",
+    "kind": "document",
+    "title": "Ration Card",
+    "aliases": ["ration card", "rashan card", "food card", "pds card"],
+    "keywords": ["ration", "food", "pds", "family", "subsidy"],
+    "goalPhrases": ["i need a ration card", "how to get a ration card", "new ration card"],
+    "summary": "Family document for subsidised food grains via the public distribution system. Also widely used as family address proof.",
+    "department": "State Food & Civil Supplies Department",
+    "category": "Family & Food",
+    "uses": ["Get subsidised food grains", "Family identity and address proof", "Support for other certificates and schemes"],
+    "authority": { "name": "State Food & Civil Supplies Department", "website": null },
+    "conditions": [{ "text": "One family typically holds one ration card for its current address." }],
+    "requirements": [
+      { "kind": "document", "label": "Aadhaar of family members", "detail": "Usually needed for the head of family and members being added.", "state": "required", "guideId": "aadhaar" },
+      { "kind": "information", "label": "Family and address details", "detail": "Names, ages, and current address for all members.", "state": "required" }
+    ],
+    "steps": [
+      { "title": "Keep family Aadhaar details and address proof ready." },
+      { "title": "Apply on your state's food-supplies portal or at the local ration office." },
+      { "title": "Complete verification if asked." },
+      { "title": "Collect the card or download it as instructed by your state." }
+    ],
+    "obtain": {
+      "where": "State Food & Civil Supplies Department — local ration office or state portal.",
+      "how": "Process varies by state, so confirm the current form on your state's official portal.",
+      "officialLinks": []
+    },
+    "relatedIds": ["aadhaar", "domicile-certificate", "income-certificate"],
+    "demo": true
+  },
+  {
+    "id": "scholarship-general",
+    "kind": "service",
+    "title": "Scholarships (General Guide)",
+    "aliases": ["scholarship", "scholarships", "student aid", "financial help for college", "nsp"],
+    "keywords": ["student", "college", "fees", "education", "study", "school", "merit"],
+    "goalPhrases": ["i am a student and need financial help", "scholarship help for college", "financial assistance for studies"],
+    "summary": "Orientation guide: what scholarships typically ask for. Requirements vary by scheme — always check the official scheme notification.",
+    "department": "Varies by scheme",
+    "category": "Education",
+    "uses": ["Understand what documents scholarships usually need", "Find which prerequisite to arrange first", "Reach the official application portal with the right papers"],
+    "authority": { "name": "Varies by scheme (central, state, or institution)", "website": "https://scholarships.gov.in" },
+    "conditions": [
+      { "text": "Each scheme has its own marks, income, category, and deadline rules — this guide cannot confirm your eligibility." },
+      { "text": "Final eligibility is decided by the scheme authority, not by this guide." }
+    ],
+    "requirements": [
+      { "kind": "prerequisite", "label": "Income Certificate", "detail": "Most need-based scholarships ask for this.", "state": "required", "guideId": "income-certificate" },
+      { "kind": "prerequisite", "label": "Caste Certificate", "detail": "Only for schemes with category-based benefits.", "state": "conditional", "condition": "You are applying for a scheme with SC / ST / OBC or other category benefits.", "guideId": "caste-certificate" },
+      { "kind": "document", "label": "Previous marksheet", "detail": "Merit and renewal rules differ per scheme.", "state": "required" },
+      { "kind": "document", "label": "Domicile or residence proof", "detail": "Some schemes ask for this, some don't — check the scheme notification.", "state": "uncertain" }
+    ],
+    "steps": [
+      { "title": "Read the official notification of the specific scholarship you want." },
+      { "title": "Arrange the prerequisites first — income and (if relevant) caste certificates take time." },
+      { "title": "Keep marksheets, Aadhaar, and bank details ready." },
+      { "title": "Apply on the official scholarship portal before the deadline." }
+    ],
+    "obtain": {
+      "where": "The official portal named in the scheme notification (for many central schemes: National Scholarship Portal).",
+      "how": "This guide explains requirements only — the application itself happens on the official portal.",
+      "officialLinks": [{ "label": "National Scholarship Portal — official site", "url": "https://scholarships.gov.in" }]
+    },
+    "relatedIds": ["income-certificate", "caste-certificate", "domicile-certificate", "aadhaar"],
+    "demo": true
+  }
+]
