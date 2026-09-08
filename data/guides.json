@@ -27,8 +27,9 @@
       {
         "kind": "prerequisite",
         "label": "PAN Card",
-        "detail": "Needed as ID proof by the bank.",
-        "state": "required",
+        "detail": "Banks typically ask for PAN as ID proof, but not in every case.",
+        "state": "conditional",
+        "condition": "You hold a regular account. For minor accounts or basic savings accounts, the bank may accept Form 60 instead — ask your bank what applies to you.",
         "guideId": "pan-card"
       },
       {
@@ -83,7 +84,7 @@
     ],
     "authority": {
       "name": "Income Tax Department",
-      "website": "https://www.incometaxindia.gov.in"
+      "website": "https://www.incometax.gov.in"
     },
     "conditions": [
       {
@@ -134,7 +135,7 @@
       "officialLinks": [
         {
           "label": "Income Tax Department — PAN information",
-          "url": "https://www.incometaxindia.gov.in"
+          "url": "https://www.incometax.gov.in"
         }
       ]
     },
@@ -146,7 +147,7 @@
     "kind": "document",
     "title": "Aadhaar",
     "aliases": ["aadhar", "aadhaar card", "uid", "uidai", "e-aadhaar"],
-    "keywords": ["identity", "address proof", "biometric", "12 digit"],
+    "keywords": ["identity", "address proof", "biometric", "12 digit", "maadhaar", "virtual id", "vid", "biometric update"],
     "goalPhrases": [
       "i want an aadhaar card",
       "i need aadhaar",
@@ -351,7 +352,7 @@
     ],
     "authority": {
       "name": "Election Commission of India",
-      "website": "https://www.eci.gov.in"
+      "website": "https://voters.eci.gov.in"
     },
     "conditions": [
       { "text": "You must be 18 years or older on the qualifying date." },
@@ -390,7 +391,7 @@
       "officialLinks": [
         {
           "label": "Election Commission of India — official site",
-          "url": "https://www.eci.gov.in"
+          "url": "https://voters.eci.gov.in"
         }
       ]
     },
@@ -406,7 +407,10 @@
       "driving license",
       "dl",
       "license",
-      "parivahan"
+      "parivahan",
+      "dl renewal",
+      "permanent dl",
+      "learning licence slot"
     ],
     "keywords": ["drive", "vehicle", "car", "bike", "learner licence", "rto"],
     "goalPhrases": [
@@ -506,7 +510,7 @@
     ],
     "authority": {
       "name": "Local municipal body / Registrar of Births and Deaths",
-      "website": null
+      "website": "https://crsorgi.gov.in"
     },
     "conditions": [
       {
@@ -545,7 +549,12 @@
     "obtain": {
       "where": "Your municipal corporation / nagar palika, or its official portal.",
       "how": "Registration rules vary by state, so confirm the local process before visiting.",
-      "officialLinks": []
+      "officialLinks": [
+        {
+          "label": "Civil Registration System — official portal",
+          "url": "https://crsorgi.gov.in"
+        }
+      ]
     },
     "relatedIds": ["aadhaar", "passport", "domicile-certificate"],
     "demo": true
@@ -559,7 +568,9 @@
     "goalPhrases": [
       "i need an income certificate",
       "how to get an income certificate",
-      "income proof for scholarship"
+      "income proof for scholarship",
+      "how to prove my annual income",
+      "income certificate for college fees"
     ],
     "summary": "It certifies a family's annual income. Commonly needed for scholarships, fee waivers, and welfare schemes.",
     "department": "State Revenue Department",
@@ -631,7 +642,7 @@
     ],
     "obtain": {
       "where": "State Revenue Department — tehsil / taluka office or state e-district portal.",
-      "how": "Process varies by state, so confirm the current form and fee on your state's official portal.",
+      "how": "Process varies by state, so confirm the current form and fee on your state's official portal. In Maharashtra, you can also check the Aaple Sarkar portal or visit a nearby Maha e-Seva Kendra.",
       "officialLinks": []
     },
     "relatedIds": ["domicile-certificate", "ration-card", "caste-certificate"],
@@ -704,7 +715,7 @@
     ],
     "obtain": {
       "where": "State Revenue Department — tehsil / taluka office or state e-district portal.",
-      "how": "Process varies by state, so confirm the current form on your state's official portal.",
+      "how": "Process varies by state, so confirm the current form on your state's official portal. In Maharashtra, you can also check the Aaple Sarkar portal or visit a nearby Maha e-Seva Kendra.",
       "officialLinks": []
     },
     "relatedIds": [
@@ -792,7 +803,7 @@
     ],
     "obtain": {
       "where": "State Revenue Department — tehsil / taluka office or state e-district portal.",
-      "how": "Process varies by state, so confirm the current form on your state's official portal.",
+      "how": "Process varies by state, so confirm the current form on your state's official portal. In Maharashtra, you can also check the Aaple Sarkar portal or visit a nearby Maha e-Seva Kendra.",
       "officialLinks": []
     },
     "relatedIds": ["ration-card", "voter-id", "income-certificate"],
@@ -853,7 +864,7 @@
     ],
     "obtain": {
       "where": "State Food & Civil Supplies Department — local ration office or state portal.",
-      "how": "Process varies by state, so confirm the current form on your state's official portal.",
+      "how": "Process varies by state, so confirm the current form on your state's official portal. In Maharashtra, you can also check the Aaple Sarkar portal or visit a nearby Maha e-Seva Kendra.",
       "officialLinks": []
     },
     "relatedIds": ["aadhaar", "domicile-certificate", "income-certificate"],
