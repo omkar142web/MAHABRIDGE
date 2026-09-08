@@ -1,463 +1,233 @@
-Yes. For **SIH26129 — “System integration and interoperability among government digital platforms, resulting in fragmented service delivery”**, the core idea should be:
+# SIH26129 — Problem Statement (Guide Direction)
 
-> **One unified government service system where citizens don't have to understand which department, portal, document, or process is responsible for what.**
-
-Think of it as a **“Government OS”** rather than another government website.
-
-### How it should work
-
-![Image](https://images.openai.com/static-rsc-4/cTh9E2PZnDArbz6Yi4LvF_jUFXZQoYTFhbENUSovIImMz9xg5zZsi-YOvEz6gBfMzy1tZTqR-AbdlBfgYzqAWzEHcD2UAMOr-1_CkfB8CUhVti_KIl4eWFJnX5EpYk3d66UuHu0q5Kc5MQTmvWVrU3Y8fUVHdLGds8dXy8eEaoh0zMqOKOGXLh0RxTSDgWAd?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/jt_saOcFI815xb3Wjsnz1fjBUSPfkdDH7Se5U8KOTU45JYFy76DqBKopngDbFAi2CiNgV97ERg4sgagC5nYONxbqu3kU69tkVvGzkFm4rXRbvB8i59kYJWr9qGkSgZNWPNwZTQedoSm8zkM4HTocjuE7xzAeSPLmCT4FAmpHRg66M4Tl6A3YiPuEdpNagqcB?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/SdOpWIbp4K6IyGQfPT9jbFCY0I1vmluuu7DbLREmK9NrBqRkUgs_VyZQuu3yJzdYPRD1htuCvYyuxY-wJJISUpibGbPzYNHb7d7M9UjeU2KlM-eC_Pa0jRyvlzFf4j-sOf38th--Yt7yPTxsof09NpmVg0oyk8L2z_Wu1lqDSH3SNQ3YO9CEuQaXJu9UsQZz?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/goyqsAag0oJXO-q4oPfq4V6usfCaJEAuQJ7KxIGxslMIWZOhOmL-kV0YEtjZC3-Y5NGmN4KChfpJ16fuPtlXAhKhiA3MW_Nu73VfGjkz7Q9bnXvAq-38QEza5bJOPWtHWK_DSOgRLsblYPvLnrKHW773VWOpm1crjOAEA8oOUVehhybrndz95iM0HUKwA7do?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/VYs0_1q2WvID73f7wXrQ5B0Xu3RJNCu7Cli2ynhWFGR4QKAZqm8WkR_F4U6acT38-ZNrAh0xok91aJFzl1huJzdN7J1X0p1vtVt1E9CI5tJHdf5mCmqPqL0Syha7Fyu4GAjXCgLAyS9Tobk62Aj5_iqKc_Rm-LN6Mi3CaxA8-bD971EFQFzW4UM8N9EuxBlP?purpose=fullsize)
-
-![Image](https://images.openai.com/static-rsc-4/5shUckeC5_MbphXjXC4LSZGTOGq7ZbxQSiv19WV55yLhhJu_7cBwGHRoFjB3rLu-S1eaO2X24k5KRvAWhj3ECaZJzC60dfCo2kRWQISN4tOxZTLe8MrbeVLXzjG6Zdw5cDsr7NkXng1TM-qsy6EsVjAjqFHk3r4MNEXPtqhvb_RpMlJym3SFlGibBsnWxEHa?purpose=fullsize)
-
-#### 1. Citizen comes to ONE place
-
-Instead of asking:
-
-* Where do I apply for PAN?
-* Which website gives income certificate?
-* Where do I update my address?
-* Which department handles this?
-* What documents do I need?
-
-They simply say:
-
-> **“I want a PAN Card.”**
-
-The system understands what they want and takes them through the process.
+> SIH Problem Statement: **SIH26129 — System integration and interoperability among government digital platforms, resulting in fragmented service delivery.**
+> Product direction: **a simple, intelligent government-service guide — not a super-app, not an integration layer.**
 
 ---
 
-#### 2. The system creates a hierarchy
+## 1. The problem in one paragraph
 
-This is important for your idea.
+Government services are organized around **departments, portals, and documents**, while citizens think in terms of **goals** (`I want an ATM card`, `I need a birth certificate`).
 
-The system shouldn't just show a giant list of government services.
+Today a citizen who wants one thing often discovers they need another thing first — and then another — without any clear explanation of what depends on what, what documents are required, or where to get them. They bounce between portals, relatives, agents, and outdated advice.
 
-It should understand:
+The fragmentation problem is real. But for this prototype we are **not solving it by integrating government systems**. We are solving the understanding problem:
 
-**Government → Department → Category → Service → Process → Documents → Eligibility → Application**
-
-For example:
-
-**Government of Maharashtra**
-↓
-**Revenue Department**
-↓
-**Certificates**
-↓
-**Income Certificate**
-↓
-Eligibility
-↓
-Required documents
-↓
-Application
-↓
-Verification
-↓
-Approval
-↓
-Certificate
-
-So a citizen doesn't need to know that the Revenue Department is responsible for it.
+> **Citizens cannot answer: What do I want? What does it need? What do I need first? What should I do next?**
 
 ---
 
-#### 3. It understands the citizen's situation
+## 2. Core product idea
 
-Instead of treating every service independently, the platform understands that **one government service may depend on information from another service.**
+One extremely simple principle:
 
-For example:
+> **A citizen should be able to come here with a goal or document in mind and understand what they need to do next.**
 
-Someone wants to apply for a **scholarship**.
+Example:
 
-Today, they might need:
+User says:
 
-* Aadhaar
-* Income certificate
-* Caste certificate
-* Domicile
-* Bank details
-* Educational information
+> "I want an ATM card."
 
-Your system should recognize:
+System explains:
 
-> “You are applying for this scholarship. We already have some of this information from government systems.”
+**ATM Card → requires PAN Card.**
 
-So instead of making the citizen repeatedly search for and upload everything, the system can **identify what is already available and what is still required.**
+If the user does not have a PAN Card:
 
----
+> **You need a PAN Card first.**
 
-### 4. “Tell us what you need” instead of “find the department”
+User clicks **PAN Card** and sees:
 
-This could be your biggest citizen-facing feature.
+- What it is
+- Why it is needed
+- Who provides it
+- What documents are required
+- What information is needed
+- Basic eligibility / conditions if relevant
+- Steps to obtain it
+- Related prerequisites
 
-A person could say:
+The product is therefore a **visual, interactive guide through government-related requirements and dependencies.**
 
-> **I am a student and I want financial assistance.**
+Mental model:
 
-The system could respond:
-
-> You may be eligible for 4 government schemes.
-
-Then:
-
-**Scholarship A**
-Required: Income Certificate ✓
-Required: Domicile ✓
-Required: Educational Details ✓
-Required: Bank Account ✓
-
-**Scholarship B**
-Required: Income Certificate ✓
-Required: Caste Certificate ✗
-Required: Educational Details ✓
-
-Now the citizen knows exactly what they can apply for.
-
----
-
-## 5. Government systems become connected behind the scenes
-
-This is the actual solution to the SIH problem.
-
-Imagine different government platforms as separate rooms:
-
-**Aadhaar-related system**
-**Revenue system**
-**Education system**
-**Transport system**
-**Health system**
-**Municipal system**
-**Banking/payment systems**
-**Central government portals**
-etc.
-
-Currently, citizens often have to act as the **messenger between these rooms**.
-
-Your platform becomes the **common bridge**.
-
-The citizen says:
-
-> “I need this service.”
-
-Your system figures out:
-
-> Which department owns it?
-> What information is required?
-> Which government system has that information?
-> What information is missing?
-> What sequence of services is required?
+```text
+USER GOAL
+   ↓
+FIND SERVICE / DOCUMENT
+   ↓
+UNDERSTAND IT
+   ↓
+SEE REQUIREMENTS
+   ↓
+SEE PREREQUISITES
+   ↓
+OPEN MISSING REQUIREMENT
+   ↓
+UNDERSTAND THAT REQUIREMENT
+   ↓
+FOLLOW THE GUIDANCE
+```
 
 ---
 
-## 6. One request can trigger multiple government services
+## 3. What this product does (only this)
 
-This is where your project can become much more powerful.
+### A. Discover
 
-Suppose someone moves to Maharashtra and wants to establish everything they need.
+Help users find the document / service they are looking for via simple search.
 
-Instead of separately figuring out:
+Homepage question:
 
-* address-related services
-* ration card
-* domicile
-* income certificate
-* various registrations
-* other eligible services
+> **What do you need help with?**
 
-the system could create a **“New Resident” journey**.
+### B. Understand
 
-It says:
+Explain what that document / service is and what it is used for, in plain language.
 
-> **Let's get everything you are eligible/required for.**
+### C. Requirements
 
-And gives them a step-by-step journey.
+Show what documents, information, or prerequisites are required.
 
----
+### D. Hierarchy
 
-# 7. A major feature: “Life Events”
+Show dependencies clearly. Example:
 
-This could make your project stand out at SIH.
+```text
+ATM Card
+│
+└── PAN Card
+    │
+    └── Required Documents
+        ├── Aadhaar
+        └── Photograph
+```
 
-Government services shouldn't always be organized around departments.
+### E. Guide
 
-They can be organized around **what happened in a person's life.**
+Tell the user what they should do next.
 
-For example:
+### F. Navigate
 
-### 👶 Having a child
+Allow the user to click into any prerequisite and understand that requirement as well.
 
-The system could show:
-
-* Birth registration
-* Birth certificate
-* Health-related government benefits
-* Child welfare schemes
-* Education-related future benefits
-* Applicable financial assistance
+That is the core product. Do not expand scope unless it directly improves this guidance experience.
 
 ---
 
-### 🎓 Starting college
+## 4. What we are NOT building
 
-The system could show:
+Explicitly out of scope for this prototype:
 
-* Scholarships
-* Domicile requirements
-* Income certificate
-* Educational schemes
-* Hostel schemes
-* Government financial assistance
+- Government application submission
+- Real government API integrations
+- Cross-department workflow orchestration
+- Application tracking / real-time status
+- Government officer dashboards
+- Document storage / wallet systems
+- Automatic eligibility decisions
+- Automatic government verification
+- Payment processing
+- Government database integration
+- Notifications infrastructure
+- Complex authentication / identity systems
+- AI agents performing government actions
+- Automated form filling
+- Complex case management
+- Government-side analytics
+- Multi-department workflow engines
 
----
+These may be future possibilities. They are **outside the current prototype**.
 
-### 💼 Starting a business
-
-The system could show:
-
-* Registrations
-* Licences
-* Tax-related requirements
-* Local permissions
-* Government schemes
-* MSME-related benefits
-
----
-
-### 🏠 Buying/building a house
-
-It could guide the citizen through:
-
-* Required permissions
-* Property-related documents
-* Applicable subsidies
-* Local authority processes
-* Utility connections
-
-The citizen thinks in terms of **life events**.
-
-The government thinks in terms of **departments**.
-
-Your platform translates between the two.
+The prototype remains a guide.
 
 ---
 
-# 8. A “Government Document Wallet”
+## 5. Guidance, not authority
 
-Another major part.
+The system must never pretend to be the government.
 
-Instead of uploading the same document repeatedly:
+Use language such as:
 
-> Aadhaar.pdf
-> IncomeCertificate.pdf
-> Domicile.pdf
-> CasteCertificate.pdf
-> Marksheet.pdf
+- "You may need…"
+- "Typically required…"
+- "Check the official requirements before applying."
+- "Requirements can vary depending on your situation."
+- "The final decision is made by the relevant authority."
 
-the citizen has a single government document/profile space.
+Never say:
 
-When applying for something, the system says:
+- "You are officially eligible."
+- "Your application is approved."
+- "The government has verified this."
+- "You definitely qualify."
 
-**Documents required**
-
-| Document           | Status      |
-| ------------------ | ----------- |
-| Aadhaar            | ✓ Available |
-| Domicile           | ✓ Available |
-| Income Certificate | ✓ Available |
-| Marksheet          | ✓ Available |
-| Bank details       | ⚠ Required  |
-
-So the citizen only provides **what is actually missing**.
+Unless such information actually comes from an official integrated system — which is outside this prototype.
 
 ---
 
-# 9. If something is missing, the system should guide them
+## 6. Official information
 
-This is very important.
-
-Don't simply say:
-
-> ❌ Income Certificate required.
-
-Instead:
-
-> **You don't have an Income Certificate.**
-
-Then:
-
-**Get Income Certificate**
-
-→ Who can apply
-→ What you need
-→ Where it comes from
-→ How long it usually takes
-→ Apply
-
-Once obtained, it becomes available for the original application.
-
-So the system effectively creates a **dependency chain**.
+- Use clearly identified mock / synthetic data where necessary.
+- Do not fabricate official approvals, application statuses, or government responses.
+- Clearly distinguish demo data from real government information.
+- Where official links are available, direct the user to the appropriate official website / portal.
+- Never imply the prototype itself is an official government authority.
 
 ---
 
-# 10. Track everything from one dashboard
+## 7. Information hierarchy (internal)
 
-The citizen shouldn't have to remember which portal they applied on.
+```text
+Government
+    ↓
+Department
+    ↓
+Category
+    ↓
+Service / Document
+    ↓
+Purpose
+    ↓
+Prerequisites
+    ↓
+Required Documents
+    ↓
+Required Information
+    ↓
+Steps
+    ↓
+Where / How to Obtain
+```
 
-Their dashboard could simply say:
+This hierarchy is primarily an **internal information structure**. Do not force citizens to navigate every level.
 
-### My Government Services
-
-**Income Certificate**
-🟢 Approved
-
-**Scholarship Application**
-🟡 Under Verification
-
-**Domicile Certificate**
-🔵 Processing
-
-**PAN Application**
-🟢 Completed
-
-And if something is stuck:
-
-> **Scholarship application is waiting for income verification.**
-
-The citizen immediately understands what is happening.
-
----
-
-# 11. Don't stop at citizen-side integration
-
-This is where you can make the project much more interesting for SIH.
-
-You mentioned earlier wanting government officials to eventually see the information.
-
-That's exactly the direction I'd take.
-
-Have **two layers**:
-
-### Citizen layer
-
-Simple:
-
-> **“What do you want to do?”**
-
-The citizen sees services, requirements, progress and guidance.
-
-### Government layer
-
-Officials see:
-
-> **What is happening across departments?**
-
-For example:
-
-**Department Dashboard**
-
-* Applications received
-* Applications pending
-* Applications waiting for another department
-* Missing information
-* Average processing time
-* Bottlenecks
-* Inter-department dependencies
-
-So the same platform serves both sides.
+A citizen should be able to search directly for "PAN card" or "I need a birth certificate" and immediately reach the relevant guide.
 
 ---
 
-# 12. The really powerful part: Government officials see the dependency network
+## 8. Success criteria
 
-Imagine an application is stuck.
+The prototype succeeds if a user arriving with almost no knowledge can answer:
 
-Instead of an official seeing:
-
-> “Application pending.”
-
-They see:
-
-**Scholarship Application**
-
-↓ requires
-
-**Income Verification**
-
-↓ requires
-
-**Revenue Department**
-
-↓ currently pending for **3 days**
-
-Now the government can identify:
-
-> “This department is becoming the bottleneck.”
-
-That gives the government **system-level visibility**, not just another citizen portal.
+- What am I trying to get?
+- What do I need for it?
+- What am I missing?
+- What do I need first?
+- Why do I need it?
+- What should I do next?
 
 ---
 
-# 13. Eventually, the system becomes a Government “Guide → Executor”
+## 9. One-sentence pitch
 
-I'd structure your project in phases.
+> **Tell us what you want. We'll tell you what you need, what comes first, what documents are required, and where / how to get them.**
 
-### Phase 1 — Government Guide
+What it is:
 
-The system tells citizens:
+> **A simple, intelligent guide to government services and documents — the front door to understanding, while actual government authorities and official portals remain responsible for real service delivery.**
 
-> What do you need?
-> Where do you get it?
-> What are you eligible for?
-> What comes next?
+What it is not:
 
-### Phase 2 — Government Integrator
-
-The system connects services so information/documents don't have to be repeatedly provided.
-
-### Phase 3 — Government Workflow
-
-One citizen request can coordinate multiple departments.
-
-### Phase 4 — Government Intelligence
-
-Officials can see:
-
-> Where are applications getting stuck?
-> Which services depend on each other?
-> Which departments have bottlenecks?
-> Where are citizens dropping out?
-
----
-
-# The simplest way to explain your entire project
-
-If judges ask **“What exactly are you building?”**, don't start with APIs, databases, interoperability, etc.
-
-Say:
-
-> **“Today, the government has many digital services, but citizens experience them as disconnected websites and processes. We are building a unified layer that connects these services around the citizen rather than around departments.”**
-
-Then:
-
-> **“A citizen simply tells us what they want to accomplish. Our platform identifies the relevant government services, determines the required documents and dependencies, retrieves information that is already available through connected government systems, guides the citizen through anything missing, and provides one unified journey and status.”**
-
-And for the government:
-
-> **“At the same time, officials get a unified view of cross-department workflows, dependencies and bottlenecks, allowing the government to see where service delivery is actually breaking down.”**
-
-### In one sentence:
-
-**Citizen asks → System understands → Government services connect → Documents/information flow → Multiple departments coordinate → Citizen gets one unified experience.**
-
-That's a much stronger concept than simply building **“one more government portal.”**
+> A replacement for government portals.
