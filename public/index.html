@@ -25,14 +25,14 @@
   </header>
 
   <main id="main" class="wrap">
-    <div class="reading">
-      <section class="hero" aria-labelledby="hero-title">
+    <section class="hero-grid" aria-labelledby="hero-title">
+      <div class="hero-copy">
         <p class="eyebrow">SIH 2026 · Guidance prototype</p>
         <h1 id="hero-title">What do you need help with?</h1>
-        <p>Tell us what you want — we'll tell you what you need, what comes first, and what to do next.</p>
+        <p class="hero-sub">Tell us what you want — we'll tell you what you need, what comes first, and what to do next.</p>
         <div class="search-row">
           <label class="skip-link" for="search-input">Tell us what you need</label>
-          <input id="search-input" type="search" name="q" placeholder="Tell us what you need…" autocomplete="off"
+          <input id="search-input" type="search" name="q" placeholder="Try &quot;PAN Card&quot; or &quot;I want an ATM card&quot;…" autocomplete="off"
                  role="combobox" aria-expanded="false" aria-controls="suggestions" aria-label="Tell us what you need">
           <ul id="suggestions" class="suggestions" hidden></ul>
         </div>
@@ -42,33 +42,79 @@
           <button type="button" data-example="income certificate">Income certificate</button>
           <button type="button" data-example="scholarship help for college">Scholarship help</button>
         </p>
-      </section>
-    </div>
+        <ul class="trust-row">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Plain-language guides</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Clickable prerequisites</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Official links included</li>
+        </ul>
+      </div>
+      <aside class="chain-demo" aria-label="Example: how guidance connects">
+        <p class="eyebrow-sm">See how it works</p>
+        <p class="chain-demo-title">One want can need another thing first.</p>
+        <div id="chain-demo"></div>
+        <a class="btn btn-ghost btn-sm chain-cta" href="guide.html?id=atm-card">Open the ATM Card guide</a>
+      </aside>
+    </section>
 
     <section id="results" class="section reading" aria-live="polite"></section>
-    <p id="result-count" class="result-count reading" role="status"></p>
+
+    <section class="section" aria-labelledby="topics-title">
+      <div class="section-head"><span class="eyebrow-sm">Browse by need</span><h2 id="topics-title">Start from your situation</h2></div>
+      <div id="topic-grid" class="card-grid"></div>
+    </section>
 
     <section class="section" aria-labelledby="popular-title">
-      <h2 id="popular-title">Popular guides</h2>
+      <div class="section-head"><span class="eyebrow-sm">Most looked up</span><h2 id="popular-title">Popular guides</h2></div>
       <div id="popular-grid" class="card-grid"></div>
     </section>
 
-    <section class="section reading" aria-labelledby="how-title">
-      <h2 id="how-title">How it works</h2>
-      <ol class="steps">
-        <li>Search for what you want — a document name or a goal like “I want an ATM card”.</li>
-        <li>Understand what it needs, what comes first, and why.</li>
-        <li>Follow the steps on the official portal. This guide explains; the authority decides.</li>
-      </ol>
+    <section class="section" aria-labelledby="how-title">
+      <div class="section-head"><span class="eyebrow-sm">How it works</span><h2 id="how-title">Three steps to clarity</h2></div>
+      <div class="how-grid">
+        <div class="how-card">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8l-2.5 5.5L8 16l2.5-5.5L16 8z"/></svg></span>
+          <h3>Search in plain words</h3>
+          <p>Type a document name or a goal like “I want an ATM card”. No government jargon needed.</p>
+        </div>
+        <div class="how-card">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg></span>
+          <h3>See what comes first</h3>
+          <p>Every prerequisite is clickable, so you always know what you need and what to open next.</p>
+        </div>
+        <div class="how-card">
+          <span class="tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg></span>
+          <h3>Finish on the official portal</h3>
+          <p>Clear steps plus the official link. This guide explains; the authority decides.</p>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    MAHA-BRIDGE demo — a guidance prototype, not a government portal. Requirements can vary; always check the official source.
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>MAHA-BRIDGE</strong>
+        <p>A simple guide to government services and documents — what you need, what comes first, and what to do next.</p>
+      </div>
+      <nav aria-label="Browse guides">
+        <strong>Browse</strong>
+        <a href="browse.html?type=services">Services</a>
+        <a href="browse.html?type=documents">Documents</a>
+        <a href="browse.html?type=guides">All guides</a>
+      </nav>
+      <nav aria-label="Popular guides">
+        <strong>Popular</strong>
+        <a href="guide.html?id=pan-card">PAN Card</a>
+        <a href="guide.html?id=aadhaar">Aadhaar</a>
+        <a href="guide.html?id=atm-card">ATM Card</a>
+      </nav>
+    </div>
+    <p class="footer-fine">Guidance prototype, not a government portal. Requirements can vary; always check the official source.</p>
   </footer>
 
   <script src="js/data-access.js"></script>
   <script src="js/search.js"></script>
+  <script src="js/icons.js"></script>
   <script src="js/ui.js"></script>
   <script src="js/home.js"></script>
 </body>
