@@ -1,5 +1,3 @@
-# TechStack.md
-
 # SIH26129 — TECHNOLOGY STACK & IMPLEMENTATION RULES
 
 You are implementing a modern government-service integration platform based on the project's behavioral specification and UI/UX design system.
@@ -8,19 +6,19 @@ This document defines the **technology stack, implementation philosophy, and tec
 
 It should be used together with:
 
-* `Plan.md` — product behavior and requirements
-* `UI-UX-Design-System.md` — visual and interaction system
-* `PlanImplementation.md` — phased implementation roadmap
+* `02-behavioral-blueprint.md` — product behavior and requirements
+* `03-ui-ux-design-system.md` — visual and interaction system
+* `05-implementation-plan.md` — phased implementation roadmap
 
 These documents serve different purposes.
 
-**Plan.md** defines WHAT the product should do.
+**02-behavioral-blueprint.md** defines WHAT the product should do.
 
-**UI-UX-Design-System.md** defines HOW the product should look and feel.
+**03-ui-ux-design-system.md** defines HOW the product should look and feel.
 
-**PlanImplementation.md** defines IN WHAT ORDER it should be built.
+**05-implementation-plan.md** defines IN WHAT ORDER it should be built.
 
-**TechStack.md** defines the TECHNOLOGY AND ENGINEERING ENVIRONMENT in which it should be built.
+**04-tech-stack.md** defines the TECHNOLOGY AND ENGINEERING ENVIRONMENT in which it should be built.
 
 ---
 
@@ -541,7 +539,7 @@ Do not use emojis as the primary icon system.
 
 # 22. FONTS
 
-Use a modern, highly readable UI font consistent with `UI-UX-Design-System.md`.
+Use a modern, highly readable UI font consistent with `03-ui-ux-design-system.md`.
 
 The exact font may be selected based on:
 
@@ -1015,13 +1013,13 @@ Do not attempt to implement the entire product simultaneously.
 
 Follow the phases defined in:
 
-**PlanImplementation.md**
+**05-implementation-plan.md**
 
 The coding agent should work on the currently assigned phase while respecting:
 
-* Plan.md
-* UI-UX-Design-System.md
-* TechStack.md
+* 02-behavioral-blueprint.md
+* 03-ui-ux-design-system.md
+* 04-tech-stack.md
 
 Do not silently skip foundational dependencies.
 
@@ -1073,7 +1071,7 @@ Do not duplicate functionality.
 
 All implementation decisions must respect:
 
-**UI-UX-Design-System.md**
+**03-ui-ux-design-system.md**
 
 If an existing component establishes a visual pattern, reuse that pattern.
 
@@ -1287,10 +1285,10 @@ The simplest correct solution should generally be preferred over a complicated s
 
 Before implementing anything:
 
-1. Read `Plan.md`.
-2. Read `UI-UX-Design-System.md`.
-3. Read `PlanImplementation.md`.
-4. Read `TechStack.md`.
+1. Read `02-behavioral-blueprint.md`.
+2. Read `03-ui-ux-design-system.md`.
+3. Read `05-implementation-plan.md`.
+4. Read `04-tech-stack.md`.
 5. Inspect the existing codebase.
 6. Understand what already exists.
 7. Determine what the current phase requires.

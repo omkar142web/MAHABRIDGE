@@ -6,7 +6,7 @@ Your task is NOT to implement the website.
 
 Your task is to create a highly detailed, dependency-aware, implementation-ready document named:
 
-**PlanImplementation.md**
+**05-implementation-plan.md**
 
 This document will later be given to another AI coding agent, which will implement the project phase-by-phase.
 
@@ -20,8 +20,8 @@ Before creating the implementation plan, read and understand ALL of the followin
 
 ### Required source
 
-**SIH26129 — Complete Behavioral Blueprint.md**
-**Problem-Statement.md**
+**02-behavioral-blueprint.md**
+**01-problem-statement.md**
 
 This contains the complete product behavior, functionality, workflows, edge cases, dependencies, user journeys, government-side behavior, citizen-side behavior, and product vision.
 
@@ -29,7 +29,7 @@ Treat it as the primary behavioral specification.
 
 ### Required source
 
-**UI-UX-Design-System.md**
+**03-ui-ux-design-system.md**
 
 This contains the permanent visual and interaction design rules.
 
@@ -69,9 +69,9 @@ The implementation agent should be able to work through the plan without having 
 
 ---
 
-# 3. DO NOT MANUALLY FOLLOW THE ORDER OF PLAN.md
+# 3. DO NOT MANUALLY FOLLOW THE ORDER OF 02-behavioral-blueprint.md
 
-Do NOT simply turn the numbered sections of Plan.md into:
+Do NOT simply turn the numbered sections of 02-behavioral-blueprint.md into:
 
 Phase 1 = points 1–10
 
@@ -170,7 +170,7 @@ Do not implement high-level features before their required foundations exist unl
 
 # 6. IDENTIFY FOUNDATIONAL SYSTEMS
 
-Analyze Plan.md and determine which concepts are reused throughout the product.
+Analyze 02-behavioral-blueprint.md and determine which concepts are reused throughout the product.
 
 Examples may include:
 
@@ -230,7 +230,7 @@ Avoid plans that cause the coding agent to independently invent the same compone
 
 Every phase must reference and respect:
 
-**UI-UX-Design-System.md**
+**03-ui-ux-design-system.md**
 
 The implementation plan must explicitly preserve:
 
@@ -820,7 +820,7 @@ Do not assume desktop behavior automatically translates to mobile.
 
 # 31. CONTENT MUST BE CONSISTENT
 
-Use the terminology established by Plan.md.
+Use the terminology established by 02-behavioral-blueprint.md.
 
 Don't randomly rename concepts across screens.
 
@@ -842,9 +842,9 @@ Maintain one vocabulary.
 
 Every important implementation task should be traceable back to the specification.
 
-Where useful, reference the relevant concept or section from Plan.md.
+Where useful, reference the relevant concept or section from 02-behavioral-blueprint.md.
 
-Do not copy huge sections of Plan.md into the implementation plan.
+Do not copy huge sections of 02-behavioral-blueprint.md into the implementation plan.
 
 Instead, create concise references.
 
@@ -881,7 +881,7 @@ Do not silently change the product scope.
 
 # 34. IDENTIFY AMBIGUITIES
 
-If Plan.md contains ambiguous behavior:
+If 02-behavioral-blueprint.md contains ambiguous behavior:
 
 Do NOT silently invent an interpretation.
 
@@ -998,7 +998,7 @@ The overall order should generally move from:
 
 BUT this is only a conceptual guideline.
 
-Determine the actual order yourself from the real dependencies in Plan.md and the existing project.
+Determine the actual order yourself from the real dependencies in 02-behavioral-blueprint.md and the existing project.
 
 ---
 
@@ -1108,7 +1108,7 @@ The exact demonstration journey should be chosen based on the strongest scenario
 
 Generate the final document using this general structure:
 
-# PlanImplementation.md
+# 05-implementation-plan.md
 
 ## 1. Implementation Strategy
 
@@ -1268,17 +1268,17 @@ Focus on:
 
 # 46. CODING AGENT HANDOFF
 
-The final PlanImplementation.md should be written so another AI agent can receive:
+The final 05-implementation-plan.md should be written so another AI agent can receive:
 
-**Plan.md**
-
-*
-
-**UI-UX-Design-System.md**
+**02-behavioral-blueprint.md**
 
 *
 
-**PlanImplementation.md**
+**03-ui-ux-design-system.md**
+
+*
+
+**05-implementation-plan.md**
 
 and then execute the implementation phase-by-phase.
 
@@ -1306,7 +1306,7 @@ Your output is exclusively the implementation roadmap.
 
 # 48. FINAL QUALITY CHECK BEFORE GENERATING THE FILE
 
-Before producing PlanImplementation.md, internally verify:
+Before producing 05-implementation-plan.md, internally verify:
 
 ### Coverage
 
@@ -1362,9 +1362,9 @@ Can an AI reasonably execute each phase without losing context?
 
 ### Final product
 
-Does the complete sequence actually produce the product described by Plan.md?
+Does the complete sequence actually produce the product described by 02-behavioral-blueprint.md?
 
-Only after this review should you generate the final PlanImplementation.md.
+Only after this review should you generate the final 05-implementation-plan.md.
 
 ---
 
@@ -1372,15 +1372,15 @@ Only after this review should you generate the final PlanImplementation.md.
 
 **Plan the implementation; do not merely summarize the product.**
 
-Plan.md answers:
+02-behavioral-blueprint.md answers:
 
 > **WHAT should the product do?**
 
-UI-UX-Design-System.md answers:
+03-ui-ux-design-system.md answers:
 
 > **HOW should the product look and feel?**
 
-PlanImplementation.md must answer:
+05-implementation-plan.md must answer:
 
 > **IN WHAT SAFE, LOGICAL, DEPENDENCY-AWARE ORDER should an AI implement it, what exactly must it do at each step, and how do we know each step is correct?**
 
