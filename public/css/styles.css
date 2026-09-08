@@ -75,7 +75,7 @@ a {
   color: var(--blue);
   text-underline-offset: 2px;
 }
-a:hover {
+a:hover:not(.brand) {
   color: var(--blue-dark);
 }
 
@@ -361,7 +361,7 @@ a:hover {
   transform: translateY(-1px);
 }
 
-p.examples{
+p.examples {
   margin-top: var(--space-4);
 }
 
@@ -1121,7 +1121,11 @@ section {
   content: "";
   position: absolute;
   inset: -40px 0 0;
-  background: radial-gradient(620px 240px at 30% 0%, rgba(37, 99, 235, 0.1), transparent 70%);
+  background: radial-gradient(
+    620px 240px at 30% 0%,
+    rgba(37, 99, 235, 0.1),
+    transparent 70%
+  );
   pointer-events: none;
 }
 .hero-grid > * {
