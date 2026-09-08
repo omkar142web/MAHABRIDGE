@@ -584,59 +584,140 @@ a.req:hover .action {
   padding: 14px 16px;
 }
 
-/* ---------- Dependency tree ---------- */
+/* ---------- Dependency view: node-cards on a rail ---------- */
 .dep-tree,
-.dep-tree ul {
+.dep-branch {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 .dep-tree {
-  padding: 4px 0 4px 2px;
+  padding: 4px 0;
 }
-.dep-tree ul {
-  padding-left: 26px;
-}
-.dep-tree li {
+.dep-branch {
   position: relative;
-  padding: 8px 0 8px 24px;
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 6px 27px;
+  padding: 16px 0 4px 24px;
   border-left: 2px solid #d5def0;
-  font-size: 15px;
-  font-weight: 550;
 }
-.dep-tree li::before {
-  content: "";
+.dep-branch::before {
+  content: "needs";
   position: absolute;
-  left: -2px;
-  top: 24px;
-  width: 18px;
-  height: 2px;
-  background: #d5def0;
-  border-radius: 2px;
-}
-.dep-tree li::after {
-  content: "requires";
-  position: absolute;
-  left: 26px;
-  top: -4px;
+  top: -11px;
+  left: 0;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: #fff;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--faint);
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
 }
-.dep-tree a {
-  font-weight: 650;
+.dep-node {
+  position: relative;
 }
-.dep-tree > li {
-  border-left: none;
-  padding-left: 0;
-  font-weight: 800;
-  font-size: 19px;
+.dep-node::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  width: 24px;
+  height: 2px;
+  background: #d5def0;
+  border-radius: 2px;
+}
+.dep-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 460px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: var(--shadow-sm);
+}
+a.dep-card {
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+a.dep-card:hover {
+  border-color: #b9cdf3;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.dep-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.dep-title {
+  font-weight: 700;
+  font-size: 15px;
   color: var(--navy-900);
 }
-.dep-tree > li::before,
-.dep-tree > li::after {
-  content: none;
+.dep-sub {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.dep-go {
+  display: inline-flex;
+  flex: none;
+  color: var(--faint);
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+.dep-go svg {
+  width: 17px;
+  height: 17px;
+}
+a.dep-card:hover .dep-go {
+  color: var(--blue);
+  transform: translateX(2px);
+}
+.dep-current {
+  background: var(--navy);
+  border-color: var(--navy);
+  box-shadow: var(--shadow-md);
+}
+.dep-current .tile {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+.dep-current .dep-title {
+  color: #fff;
+}
+.dep-current .dep-sub {
+  color: #c4cede;
+}
+.dep-dup {
+  border-style: dashed;
+  background: var(--surface-soft);
+  box-shadow: none;
+}
+@media (max-width: 720px) {
+  .dep-branch {
+    margin-left: 18px;
+    padding-left: 18px;
+  }
+  .dep-node::before {
+    left: -18px;
+    width: 18px;
+  }
+  .dep-card {
+    max-width: none;
+  }
 }
 
 /* ---------- Steps ---------- */
@@ -743,6 +824,7 @@ a.req:hover .action {
   font-size: 14px;
   color: var(--muted);
   box-shadow: var(--shadow-sm);
+  margin: var(--space-4) 0;
 }
 .notice.amber {
   border-left-color: var(--amber-tx);
@@ -1235,10 +1317,18 @@ section {
   color: var(--muted);
   text-decoration: none;
   font-weight: 550;
+  transition:
+    background var(--transition),
+    color var(--transition);
 }
 .toc-list a:hover {
   background: var(--blue-bg);
   color: var(--navy-900);
+}
+.toc-list a[aria-current="true"] {
+  background: var(--blue-bg);
+  color: var(--navy-900);
+  font-weight: 700;
 }
 .toc-mobile {
   display: none;

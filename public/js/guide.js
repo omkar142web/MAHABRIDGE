@@ -299,7 +299,10 @@
       s.appendChild(grid);
       article.insertBefore(s, honest);
       appendTocLink(layout, "related", "Related guides");
+      spy.watch(s);
     });
+
+    const spy = initSpy(layout, article);
 
     return layout;
   }
@@ -334,6 +337,7 @@
       const li = document.createElement("li");
       const a = document.createElement("a");
       a.href = "#" + l.id;
+      a.dataset.section = l.id;
       a.textContent = l.label;
       li.appendChild(a);
       ul.appendChild(li);
@@ -350,6 +354,30 @@
       li.appendChild(a);
       nav.appendChild(li);
     }
+  }
+
+  /* Highlights the TOC link for the section in view (drives both rails). */
+  function initSpy(layout, article) {
+    function setActive(id) {
+      const links = layout.querySelectorAll(".toc-list a[data-section]");
+      for (const a of links) {
+        if (a.dataset.section === id) a.setAttribute("aria-current", "true");
+        else a.removeAttribute("aria-current");
+      }
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) setActive(e.target.id);
+        }
+      },
+      { rootMargin: "-30% 0px -60% 0px" }
+    );
+    function watch(section) {
+      if (section && section.id) observer.observe(section);
+    }
+    article.querySelectorAll("section[id]").forEach(watch);
+    return { watch };
   }
 
   document.addEventListener("DOMContentLoaded", init);

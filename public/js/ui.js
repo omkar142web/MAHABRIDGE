@@ -113,14 +113,29 @@ const GuideUI = (() => {
     return h("li", { class: "req" }, kids);
   }
 
-  /** Simple nested-list dependency tree with cycle + broken-link guards. */
+  /** Dependency view: node-cards on a rail ("you are here" root,
+   *  clickable prerequisite cards, "needs" connector pills).
+   *  Stays a semantic nested list for screen readers. Cycles and broken
+   *  links render as muted rows, never dead links. */
   function depTree(guide, byId, seen) {
     seen = seen || new Set([guide.id]);
     const root = h("ul", { class: "dep-tree" }, []);
-    const top = h("li", {}, [guide.title]);
+    const top = h("li", {}, [
+      h("div", { class: "dep-card dep-current" }, [
+        h("span", { class: "tile tile-xs" }, [Icon.el(categoryIcon(guide))]),
+        h("span", { class: "dep-text" }, [
+          h("span", { class: "dep-title" }, [guide.title]),
+          h("span", { class: "dep-sub" }, [
+            "You are here \u00B7 " + (guide.kind === "service" ? "Service" : "Document"),
+          ]),
+        ]),
+      ]),
+    ]);
     const prereqs = GuideStore.edges(guide.requirements, []);
     if (prereqs.length > 0) {
-      top.appendChild(h("ul", {}, prereqs.map((pid) => depNode(pid, byId, new Set(seen)))));
+      top.appendChild(
+        h("ul", { class: "dep-branch" }, prereqs.map((pid) => depNode(pid, byId, new Set(seen))))
+      );
     }
     root.appendChild(top);
     return root;
@@ -129,14 +144,34 @@ const GuideUI = (() => {
   function depNode(pid, byId, seen) {
     const target = byId.get(pid);
     if (!target || seen.has(pid)) {
-      const label = target ? target.title : pid;
-      return h("li", {}, [label + (target ? " (see above)" : "")]);
+      return h("li", { class: "dep-node" }, [
+        h("span", { class: "dep-card dep-dup" }, [
+          h("span", { class: "tile tile-xs" }, [Icon.el("info")]),
+          h("span", { class: "dep-text" }, [
+            h("span", { class: "dep-title" }, [target ? target.title : pid]),
+            h("span", { class: "dep-sub" }, ["Already shown above \u2014 follow the chain up"]),
+          ]),
+        ]),
+      ]);
     }
     seen.add(pid);
-    const li = h("li", {}, [h("a", { href: guideHref(pid, null) }, [target.title])]);
+    const li = h("li", { class: "dep-node" }, [
+      h("a", { class: "dep-card", href: guideHref(pid, null) }, [
+        h("span", { class: "tile tile-xs" }, [Icon.el(categoryIcon(target))]),
+        h("span", { class: "dep-text" }, [
+          h("span", { class: "dep-title" }, [target.title]),
+          h("span", { class: "dep-sub" }, [
+            (target.kind === "service" ? "Service" : "Document") + " \u00B7 View guide",
+          ]),
+        ]),
+        h("span", { class: "dep-go" }, [Icon.el("arrowRight")]),
+      ]),
+    ]);
     const nested = GuideStore.edges(target.requirements, []).filter((id) => byId.get(id));
     if (nested.length > 0) {
-      li.appendChild(h("ul", {}, nested.map((id) => depNode(id, byId, new Set(seen)))));
+      li.appendChild(
+        h("ul", { class: "dep-branch" }, nested.map((id) => depNode(id, byId, new Set(seen))))
+      );
     }
     return li;
   }
