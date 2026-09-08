@@ -13,6 +13,8 @@
     const params = new URLSearchParams(window.location.search);
     const type = params.get("type") || "guides";
     const cat = params.get("cat") || "";
+    const navLink = document.querySelector('.site-nav a[href="browse.html?type=' + type + '"]');
+    if (navLink) navLink.setAttribute("aria-current", "page");
 
     let guides = [];
     try {

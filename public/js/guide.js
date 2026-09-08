@@ -381,5 +381,9 @@
     return { watch };
   }
 
+  // Highlight the section in the header nav (scripts run after the header markup).
+  const navLink = document.querySelector('.site-nav a[href="browse.html?type=guides"]');
+  if (navLink) navLink.setAttribute("aria-current", "page");
+
   document.addEventListener("DOMContentLoaded", init);
 })();
